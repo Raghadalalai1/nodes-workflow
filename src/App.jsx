@@ -21,20 +21,7 @@ const CustomNode = ({ id, data, deleteNode }) => (
     <FontAwesomeIcon icon={faXmark} style={{color: "#ff0000",position:'absolute',right:'5px',top:'2px'}}  onClick={() => deleteNode(id)}/>
     <FontAwesomeIcon icon={faLayerGroup} style={{color: "#ff0000",}} />
     <div><input type="text" placeholder='source' style={{border:'1px solid gray',outline:'none', padding:'5px', borderRadius:'3px' ,width:'150px'}}/></div>
-    {/* <button
-      style={{
-        padding: '5px 10px',
-        background: '#ff4d4d',
-        color: '#fff',
-        border: 'none',
-        borderRadius: '3px',
-        cursor: 'pointer',
-        marginTop: '10px'
-      }}
-      onClick={() => deleteNode(id)}
-    >
-      Delete
-    </button> */}
+
     <Handle type="source" position="bottom" style={{ background: 'green' }} />
   </div>
 );
@@ -49,20 +36,7 @@ const EmailNode = ({ id, data, deleteNode }) => (
    <h5 style={{ color: '#3498db' }}>send email to contact</h5>
    </div>
     
-    {/* <button
-      style={{
-        padding: '5px 10px',
-        background: '#ff4d4d',
-        color: '#fff',
-        border: 'none',
-        borderRadius: '3px',
-        cursor: 'pointer',
-        marginTop: '10px'
-      }}
-      onClick={() => deleteNode(id)}
-    >
-      Delete
-    </button> */}
+
 
     <Handle type="source" position="bottom" style={{ background: 'green' }} />
   </div>
@@ -79,20 +53,7 @@ const PasswordNode = ({ id, data, deleteNode }) => (
    <h4 style={{ color: '#e67e22', fontWeight: 'bold' }}>password</h4>
    <h5 style={{ color: '#e67e22' }}>check your password</h5>
    </div>
-    {/* <button
-      style={{
-        padding: '5px 10px',
-        background: '#ff4d4d',
-        color: '#fff',
-        border: 'none',
-        borderRadius: '3px',
-        cursor: 'pointer',
-        marginTop: '10px'
-      }}
-      onClick={() => deleteNode(id)}
-    >
-      Delete
-    </button> */}
+
 
     <Handle type="source" position="bottom" style={{ background: 'green' }} />
   </div>
@@ -104,20 +65,7 @@ const Example1Node = ({ id, data, deleteNode }) => (
         <FontAwesomeIcon icon={faXmark} style={{color: "#ff0000",position:'absolute',right:'5px',top:'2px'}}  onClick={() => deleteNode(id)}/>
    
     <div style={{ color: '#2ecc71', fontWeight: 'bold' }}>{data.label}</div>
-    {/* <button
-      style={{
-        padding: '5px 10px',
-        background: '#ff4d4d',
-        color: '#fff',
-        border: 'none',
-        borderRadius: '3px',
-        cursor: 'pointer',
-        marginTop: '10px'
-      }}
-      onClick={() => deleteNode(id)}
-    >
-      Delete
-    </button> */}
+
     <Handle type="source" position="bottom" style={{ background: 'green' }} />
   </div>
 );
@@ -132,20 +80,7 @@ const HomeNode = ({ id, data, deleteNode }) => (
    <h4 style={{ color: '#8e44ad', fontWeight: 'bold' }}>sms</h4>
    <h5 style={{ color: '#8e44ad' }}>send sms to contact</h5>
    </div>
-    {/* <button
-      style={{
-        padding: '5px 10px',
-        background: '#ff4d4d',
-        color: '#fff',
-        border: 'none',
-        borderRadius: '3px',
-        cursor: 'pointer',
-        marginTop: '10px'
-      }}
-      onClick={() => deleteNode(id)}
-    >
-      Delete
-    </button> */}
+
     <Handle type="source" position="bottom" style={{ background: 'green' }} />
   </div>
 );
@@ -161,20 +96,7 @@ const LoginNode = ({ id, data, deleteNode }) => (
    <h5 style={{ color: '#1abc9c' }}>check behavour of the rule</h5>
    </div>
 
-    {/* <button
-      style={{
-        padding: '5px 10px',
-        background: '#ff4d4d',
-        color: '#fff',
-        border: 'none',
-        borderRadius: '3px',
-        cursor: 'pointer',
-        marginTop: '10px'
-      }}
-      onClick={() => deleteNode(id)}
-    >
-      Delete
-    </button> */}
+
     <Handle type="source" position="bottom" style={{ background: 'green' }} />
   </div>
 );
@@ -197,18 +119,7 @@ const initialNodes = [
     data: { label: 'Input Node' },
     position: { x: 250, y: 5 },
   },
-  // {
-  //   id: '2',
-  //   type: 'customNode',
-  //   data: { label: 'Default Node' },
-  //   position: { x: 100, y: 100 },
-  // },
-  // {
-  //   id: '3',
-  //   type: 'customNode',
-  //   data: { label: 'Output Node' },
-  //   position: { x: 400, y: 100 },
-  // },
+
 ];
 
 const initialEdges = [
@@ -262,7 +173,7 @@ function FlowChart() {
           <Background />
         </ReactFlow>
         <button onClick={() => setadd(!add)} style={{ position: 'absolute', border: 'none' , padding: '5px 10px' , top: 10, left: 10 , display: 'flex' , flexDirection: 'column' , backgroundColor: '#fff' , boxShadow: '0 0 5px 1px gray' , cursor: 'pointer'}}>Create Node</button>
-        <div style={{ position: 'absolute', top: 50, left: 10 , display: 'flex' , flexDirection: 'column' , backgroundColor: '#fff' , transition: '0.4s' , boxShadow: '0 0 5px 1px gray' , opacity: `${add ? 0 : 1}` , height: `${add ? '0px' : '250px'}`, overflow: `${add ? 'hidden' : 'visible'}`}} >
+        <div style={{ position: 'absolute', top: 50, left: 10 , display: 'flex',justifyContent:'space-evenly' , flexDirection: 'column' , backgroundColor: '#fff' , transition: '0.4s' , boxShadow: '0 0 5px 1px gray' , opacity: `${add ? 0 : 1}` , height: `${add ? '0px' : '70vh'}`, overflow: `${add ? 'hidden' : 'visible'}`}} >
           <button style={{ backgroundColor:"#fff" , border:"1px solid gray" , padding:"6px 10px" , margin: '10px'}} onClick={() => addNode('customNode')}>Add Custom Node</button>
           <button style={{ backgroundColor:"#eaf4fc" , border:"1px solid gray" , padding:"6px 10px" , margin: '10px', border: '2px solid #3498db' , color: '#3498db' , borderRadius: '5px'}} onClick={() => addNode('emailNode')}>Add Email Node</button>
           <button style={{ backgroundColor:"#fff" , border:"1px solid gray" , padding:"6px 10px" , margin: '10px', border: '2px solid #e67e22', borderRadius: '5px', background: '#fde3cf' , color: '#e67e22'}} onClick={() => addNode('passwordNode')}>Add Password Node</button>
